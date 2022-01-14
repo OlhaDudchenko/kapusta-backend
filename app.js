@@ -3,7 +3,7 @@ const logger = require('morgan')
 const cors = require('cors')
 
 const authRouter = require('./routes/users/usersRoutes')
-// const transactionsRouter = require('./routes/transactions')
+const transactionRouter = require('./routes/transactions')
 const { errorHandler } = require('./helpers/apiHelpers')
 
 const app = express()
@@ -15,7 +15,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/users', authRouter)
-// app.use('/transactions', transactionsRouter)
+app.use('/transactions', transactionRouter)
 
 app.use(errorHandler)
 app.use((req, res) => {
