@@ -1,5 +1,5 @@
 
-const { User } = require('../../db/userModal')
+const { User } = require('../../db/userModel')
 const { RegistrationConflictError } = require('../../helpers/errors')
 require('dotenv').config()
 

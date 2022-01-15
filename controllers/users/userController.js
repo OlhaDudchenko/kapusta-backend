@@ -1,4 +1,4 @@
-const { registrationUser, loginUser, logoutUser,updateBalance } = require('../../servises/users')
+const { registrationUser, loginUser, logoutUser,updateBalance } = require('../../services/users/index')
 
 class UserController {
   constructor() {

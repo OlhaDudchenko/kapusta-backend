@@ -2,9 +2,10 @@ const express = require('express')
 const router = express.Router()
 const { asyncWrapper } = require('../../helpers/apiHelpers')
 // const { authMiddleware } = require('../../../middlewares/authMiddleware')
-const UserController = require('../../controllers/users/userController')
+const authController = require('../../controllers/googleAuth/authController')
 
 
-router.post('/register', asyncWrapper(UserController.register))
+router.get('/google', asyncWrapper(authController.googleAuth))
+router.get('/google-redirect', asyncWrapper(authController.googleRedirect))
 
 module.exports = router

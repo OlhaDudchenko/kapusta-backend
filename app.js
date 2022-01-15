@@ -3,7 +3,7 @@ const logger = require('morgan')
 const cors = require('cors')
 
 const authRouter = require('./routes/users/usersRoutes')
-const transactionRouter = require('./routes/transactions')
+// const transactionRouter = require('./routes/transactions')
 const { errorHandler } = require('./helpers/apiHelpers')
 
 const app = express()
@@ -14,8 +14,10 @@ app.use(logger(formatsLogger))
 app.use(cors())
 app.use(express.json())
 
+app.use(express.static('public'))
+
 app.use('/users', authRouter)
-app.use('/transactions', transactionRouter)
+// app.use('/transactions', transactionRouter)
 
 app.use(errorHandler)
 app.use((req, res) => {
